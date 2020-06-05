@@ -77,7 +77,7 @@ namespace Calendario2
                 {
                     aux++;
                     if (review == 0)
-                        datefinal = datefinal;
+                        datefinal = datefinal.AddDays(7);
 
                     else if (review == 1)
                         datefinal = datefinal.AddDays(21);
