@@ -64,12 +64,11 @@ namespace Calendario2
                 {
                     aux++;
                     if (review == 0)
-                        datefinal = datefinal;
+                        datefinal = datefinal.AddDays(7);
                     else if (review == 1)
                         datefinal = datefinal.AddDays(21);
                     else if (review >= 2)
                         datefinal = datefinal.AddDays(45);
-                    MessageBox.Show("Entrou");
                     tempodiario = DB.catchDB(datefinal, category) + time;
                 }
                 else
@@ -95,8 +94,6 @@ namespace Calendario2
             ClasseDB Database = new ClasseDB();
             string trans = Data.Value.ToShortDateString(); // Transformar o DateTime somente em data, retirar o tempo.
             DateTime datefunction = Convert.ToDateTime(trans);
-
-            MessageBox.Show(Convert.ToString(datefunction));
 
             if (NomedaDisciplina.Text == "" || Categoria.Text == "" || Arquivo.Text == "" || Revisao.Text == "")
                 MessageBox.Show("Preencha todos os campos !!!");
